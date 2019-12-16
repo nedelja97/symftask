@@ -1,0 +1,86 @@
+<section id="code-section" class="doc-section">
+    <h2 class="section-title">Code</h2>
+
+    <!--//section-block-->
+    <div id="html" >
+
+        {# <div class="callout-block callout-success">
+            <div class="icon-holder">
+                <i class="fas fa-thumbs-up"></i>
+            </div>
+      
+            <div class="content">
+                <h4 class="callout-title">Useful Tip:</h4>
+                <p>You can use this online <a href="https://mothereff.in/html-entities" target="_blank">HTML entity
+                        encoder/decoder</a> to generate your code examples.</p>
+            </div>
+    
+        </div> #}
+        <div class="code-block">
+            <h6>HTML Code</h6>
+            <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    ...
+    &lt;div class=&quot;contact&quot; id=&quot;contactForm&quot; action=&quot;https://contact-controller.bet.org.rs/email/send&quot; method=&quot;POST&quot;&gt;
+    &lt;form id=&quot;contactForm&quot; action=&quot;https://contact-controller.bet.org.rs/email/send&quot; method=&quot;POST&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; placeholder=&quot;Full Name&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;input type=&quot;text&quot; id=&quot;subject&quot; name=&quot;subject&quot; placeholder=&quot;Subject&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4&quot;&gt;
+            &lt;input type=&quot;text&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;E-mail&quot;&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;sendto&quot; name=&quot;sendto&quot; value=&quot;your@email.com&quot;&gt;
+            &lt;input type=&quot;hidden&quot; id=&quot;sendfrom&quot; name=&quot;sendfrom&quot; value=&quot;contact@somedomain.rs&quot;&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+            &lt;textarea placeholder=&quot;Message&quot; id=&quot;message&quot; name=&quot;message&quot; rows=&quot;8&quot; &gt; &lt;/textarea&gt;
+            &lt;button class=&quot;btn-ghost pull-right&quot; type=&quot;submit&quot; &gt; Send &lt;/button&gt;
+    &lt;form&gt;
+    </code></pre>
+        
+        </div>
+        <!--//code-block-->
+    </div>
+    <!--//section-block-->
+    <div id="js" class="section-block">
+        <div class="code-block">
+            <h6>JavaScript Code</h6>
+            <pre><code class="language-js">
+                &lt;$('#contactForm').on('submit',function(e){
+    e.preventDefault();
+
+    var $action = $(this).prop('action');
+    var $data = $(this).serialize();
+    var $this = $(this);
+
+    $this.prevAll('.alert').remove();
+
+    $.post( $action, $data, function( response ) {
+
+        if( response === 'error' ){
+
+            $this.before( '<div class="alert  alert-warning">Došlo je do greške. <br />Molimo pokušajte ponovo kasnije!</div>' );
+        }
+
+        if( response === 'success' ){
+
+            $this.before( '<div class="alert alert-success">Hvala Vam na poslatoj poruci. <br />Odgovorićemo Vam u najkraćem mogućem roku!</div>' );
+            $this.find('input, textarea').val('');
+        }
+
+    }, "json");
+
+});
+            
+            </code></pre>
+        </div>
+
+    </div>
+
+    
+
+</section>
+<!--//doc-section-->

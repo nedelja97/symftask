@@ -1,0 +1,10 @@
+index:
+    path: /
+    controller: App\Controller\IndexAction
+    schemes: [https]
+
+send_email:
+    path: /email/send
+    methods:  [POST]
+    schemes: [https]
+    controller: App\Controller\SendMailAction
